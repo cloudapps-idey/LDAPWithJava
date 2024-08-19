@@ -16,9 +16,9 @@ public class App {
 	public void newConnection() {
 		Properties env = new Properties();
 		env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
-		env.put(Context.PROVIDER_URL, "ldap://localhost:10389");
-		env.put(Context.SECURITY_PRINCIPAL, "uid=admin, ou=system");
-		env.put(Context.SECURITY_CREDENTIALS, "secret");
+		env.put(Context.PROVIDER_URL, "ldap://ldap.forumsys.com:389");
+		env.put(Context.SECURITY_PRINCIPAL, "cn=read-only-admin,dc=example,dc=com");
+		env.put(Context.SECURITY_CREDENTIALS, "password");
 		try {
 			connection = new InitialDirContext(env);
 			System.out.println("Hello World!" + connection);
